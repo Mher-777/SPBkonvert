@@ -1,0 +1,39 @@
+.intro {
+  &__slider {
+    padding: 4rem 0;
+  }
+  &__image {
+    max-width: 46.5rem;
+  }
+  &__content {
+    max-width: 53.5rem;
+    margin-left: 4rem;
+    padding-top: 4rem;
+    p {
+      font-size: 1.8rem;
+      margin-top: .5rem;
+    }
+  }
+  &__nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% + 13rem);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    pointer-events: none;
+    margin: 0 -6.5rem;
+    button {
+      pointer-events: auto;
+      height: 100%;
+      padding: 2.5rem;
+      .icon {
+        width: 2.6rem;
+        height: 5rem;
+        fill: var(--color-base)
+      }
+    }
+  }
+}

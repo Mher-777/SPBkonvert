@@ -1,0 +1,31 @@
+-
+    var intro = {
+        nav: true,
+        navContainerClass: 'intro__nav',
+        autoplay: true,
+        autoplayTimeout: 4000,
+        rewind: true,
+        autoplayHoverPause: true
+    };
+
++b.SECTION.intro
+    .container
+        +e.slider.js-slider(data-settings=intro)
+            +e.slide.flex._center
+                +e.IMG(src="/app/img/delivery.svg" alt="Лучшие условия доставки!").image
+                +e.content.content
+                    h1 Лучшие условия доставки - <br> <strong class="uppercase">вся Россия!</strong>
+                    p Более 1000 пунктов самовывоза в городах РФ
+                    +link('#') Условия доставки
+            +e.slide.flex._center
+                +e.IMG(src="/app/img/delivery.svg" alt="Лучшие условия доставки!").image
+                +e.content.content
+                    h1 Лучшие условия доставки - <br> <strong class="uppercase">вся Россия!</strong>
+                    p Более 1000 пунктов самовывоза в городах РФ
+                    +link('#') Условия доставки
+            +e.slide.flex._center
+                +e.IMG(src="/app/img/delivery.svg" alt="Лучшие условия доставки!").image
+                +e.content.content
+                    h1 Лучшие условия доставки - <br> <strong class="uppercase">вся Россия!</strong>
+                    p Более 1000 пунктов самовывоза в городах РФ
+                    +link('#') Условия доставки

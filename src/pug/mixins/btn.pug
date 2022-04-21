@@ -19,3 +19,9 @@ mixin btnCity()
 mixin btnSearch()
     +e.BUTTON.btn.btn-search__()&attributes(attributes)
         +icon('search')
+
+mixin btnFavorites(count = false)
+    +b.BUTTON.btn-favorites()&attributes(attributes)
+        if count
+            +e.SPAN.count=count
+        +icon('heart')

@@ -1,0 +1,7 @@
+mixin link(link, icon = 'longLeft')
+    +e.A(href=link).link.link__&attributes(attributes)
+        if block
+            +e.SPAN.text
+                block
+        if icon
+            +icon(icon)

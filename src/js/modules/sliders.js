@@ -13,8 +13,8 @@ var sliders = {
 		smartSpeed: 600,
 		margin: 20,
 		navText: [
-			'<svg class="icon icon-longArrowLeft" viewBox="0 0 25 16"><use xlink:href="/app/icons/sprite.svg#longArrow"></use></svg>',
-			'<svg class="icon icon-longArrowLeft" viewBox="0 0 25 16"><use xlink:href="/app/icons/sprite.svg#longArrow"></use></svg></span>',
+			'<svg class="icon icon-arrowLeft" viewBox="0 0 26 50"><use xlink:href="/app/icons/sprite.svg#arrowLeft"></use></svg>',
+			'<svg class="icon icon-arrowRight" viewBox="0 0 26 50"><use xlink:href="/app/icons/sprite.svg#arrowRight"></use></svg></span>',
 		],
 	},
 
@@ -30,17 +30,6 @@ var sliders = {
 		$(selector)
 			.addClass("owl-carousel")
 			.on("initialized.owl.carousel", (e) => {
-				let $slider = $(e.target);
-				let $logos = $slider.find(".js-logo:not([style])");
-
-				if ($logos.length) {
-					$logos.each((i, el) => {
-						if ($(el).hasClass("is-changed")) return false;
-
-						defaults.logoLoading(el);
-					});
-				}
-
 				// counter
 				let $counter = $(e.target).find(".owl-counter");
 				let carousel = e.relatedTarget;

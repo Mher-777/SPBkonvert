@@ -1,0 +1,27 @@
+.link {
+  font-size: 1.2rem;
+  color: var(--color-red);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 700;
+  padding: .6rem 1.3rem;
+  border: 1px solid transparent;
+  border-radius: 3rem;
+  margin-left: -1.3rem;
+  transition: var(--base-transition);
+  .icon {
+    width: 1.8rem;
+    height: 1.1rem;
+    fill: var(--color-red);
+    flex-shrink: 0;
+    margin-left: .5rem;
+    transition: var(--base-transition);
+  }
+  &:hover {
+    border-color: var(--color-red);
+    background-color: var(--color-white);
+    .icon {
+      transform: translateX(.25rem);
+    }
+  }
+}
