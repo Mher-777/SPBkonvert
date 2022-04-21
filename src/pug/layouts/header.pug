@@ -1,1 +1,85 @@
-+e.HEADER.header
++b.HEADER.header
+    +e.top
+        .container
+            +e.row.flex._justify._vertical
+                +e.menu.menu-top__
+                    +e.UL.list.flex._vertical
+                        +e.LI.item
+                            +e.A(href="#").link.is-active Печать
+                        +e.LI.item
+                            +e.A(href="#").link Доставка
+                        +e.LI.item
+                            +e.A(href="#").link Скидки
+                        +e.LI.item
+                            +e.A(href="#").link Контакты
+                        +e.LI.item
+                            +e.A(href="#").link О компании
+                +e.info
+                    +e.phones.flex._center
+                        +e.A(href="tel:88003330601" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone 8 (800) 333-06-01
+                        +e.A(href="tel:88123396160" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone 8 (812) 339-61-60
+                    +e.feedback.feedback__
+                        +e.A(href="#feedback").link Обратная связь
+                        +e.A(href="#request-call").link Заказать звонок
+    +e.main
+        .container
+            +e.inner
+                +e.cell._left
+                    +btn()(type="button")._big._uppercase.js-btn-menu
+                        +e.SPAN.hamburger
+                            +icon('hamburgerClose')
+                            +icon('hamburgerOpen')
+                        +e.SPAN.text Каталог
+                    +e.holder
+                        +btnCity()(data-tippy-content=`
+                            <span class='city-tooltip__text'>Ваш город:</span>
+                            <span class='city-tooltip__title'>Санкт-Петербург?</span>
+                            <button class="city-tooltip__btn btn btn_green js-close-tooltip" type="button">
+                                Да
+                            </button>
+                            <button class="city-tooltip__btn btn btn_black btn_border" type="button">
+                                Другой город
+                            </button>
+                        ` data-tippy-theme="city-tooltip" data-tippy-interactive="true" data-tippy-trigger="click") Санкт-Петербург
+                        +e.logo.logo__
+                            +e.A(href="main.html").link
+                                +e.IMG(src="/app/img/logo.svg" alt="Логотоп").image
+                +e.cell._right
+                    +e.search.search__
+                        +e.FORM(action="").form
+                            +e.field
+                                +e.INPUT(placeholder="Поиск...").input.js-search
+                                +e.BUTTON(type="button").delete.js-search-delete
+                                    +icon('close')
+                                +btnSearch()
+                        +e.dropdown.dropdown__.js-search-dropdown
+                            +e.UL.list
+                                +e.LI.item
+                                    +e.A(href="#").link Белые конверты
+                                +e.LI.item
+                                    +e.A(href="#").link Конверты крафт
+                                +e.LI.item
+                                    +e.A(href="#").link Цветные конверты
+                                +e.LI.item
+                                    +e.A(href="#").link Дизайнерские конверты
+                                +e.LI.item
+                                    +e.A(href="#").link Полупрозрачные из кальки
+                                +e.LI.item
+                                    +e.A(href="#").link Полупрозрачные из кальки
+                                +e.LI.item
+                                    +e.A(href="#").link Картонные конверты
+                                +e.LI.item
+                                    +e.A(href="#").link Печать на конвертах
+                                +e.LI.item
+                                    +e.A(href="#").link Конверты "С праздником"
+
+                    +e.features.features__.flex
+                        +e.A(href="#" data-count="3").link
+                            +icon('order')
+                            +e.text Заказы
+                        +e.A(href="#").link
+                            +icon('user')
+                            +e.text Войти
+                        +e.A(href="#" data-count="12").link
+                            +icon('basket')
+                            +e.text Корзина

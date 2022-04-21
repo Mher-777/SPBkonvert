@@ -55,6 +55,7 @@
     "magnific-popup": "^1.1.0",
     "owl.carousel": "^2.3.4",
     "sass-mediaqueries": "^1.6.1",
-    "select2": "*"
+    "select2": "*",
+    "tippy.js": "^6.3.7"
   }
 }

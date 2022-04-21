@@ -1,0 +1,45 @@
+.search {
+  &.is-focus {
+    z-index: 9999;
+    .search__input {
+      border-color: var(--color-white);
+    }
+  }
+  &__field {
+    position: relative;
+    overflow: hidden;
+  }
+  &__input {
+    height: 5.2rem;
+    border-radius: .5rem;
+    border: 1px solid var(--color-red);
+    padding: 1.3rem 7.5rem 1.3rem 2.5rem;
+    display: block;
+    width: 100%;
+    transition: var(--base-transition);
+    &::placeholder {
+      font-weight: 500;
+      color: var(--color-base);
+      font-size: 1.4rem;
+    }
+  }
+  &__btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+  }
+  &__dropdown {
+    top: calc(100% + .5rem);
+    max-height: 35rem;
+  }
+  &__delete {
+    width: 1.2rem;
+    height: 1.2rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 6.5rem;
+    display: none;
+  }
+}

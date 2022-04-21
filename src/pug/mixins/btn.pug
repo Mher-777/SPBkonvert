@@ -1,0 +1,21 @@
+mixin btn(link = false)
+    if (link)
+        +e.A(href=link).btn.btn__&attributes(attributes)
+            if block
+                block
+
+    else
+        +e.BUTTON.btn.btn__()&attributes(attributes)
+            if block
+                block
+
+mixin btnCity()
+    +e.BUTTON.btn-city.btn-city__()&attributes(attributes)
+        +icon('map')
+        +e.SPAN.text
+            if block
+                block
+
+mixin btnSearch()
+    +e.BUTTON.btn.btn-search__()&attributes(attributes)
+        +icon('search')

@@ -1,0 +1,159 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  height: 4rem;
+  border-radius: .5rem;
+  background-color: var(--color-red);
+  color: var(--color-white);
+  position: relative;
+  overflow: hidden;
+  transition: var(--base-transition);
+  font-size: 1.4rem;
+  line-height: (19/14) * 1;
+  min-width: 14rem;
+  padding: 1rem;
+  border: 1px solid transparent;
+  .icon {
+    flex-shrink: 0;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    background-color: var(--color-red);
+    transition: var(--base-transition);
+    height: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+
+  &:hover {
+    background-color: var(--color-red-hover);
+    &::before {
+      height: .5rem;
+    }
+  }
+
+  &__hamburger {
+    width: 2.7rem;
+    flex-shrink: 0;
+    height: 1.8rem;
+    position: relative;
+    margin-right: 1.5rem;
+    .icon {
+      width: 2.7rem;
+      fill: var(--color-white);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: var(--base-transition);
+    }
+  }
+
+  &_green {
+    background-color: var(--color-green);
+    &::before {
+      background-color: var(--color-green);
+    }
+    &:hover {
+      background-color: var(--color-green-hover);
+    }
+  }
+
+  &_black {
+    background-color: transparent;
+    color: var(--color-base);
+  }
+
+  &_border {
+    border-color: var(--color-base);
+    &::before {
+      display: none;
+    }
+    &:hover {
+      border-color: #C3C7CB;
+      background-color: #F4F4F4;
+    }
+  }
+
+  &_tiny {
+    font-size: 1.2rem;
+    line-height: (14/12) * 1;
+  }
+
+  &_big {
+    height: 5.2rem;
+    font-size: 1.8rem;
+    padding: 1rem 2rem;
+    .icon-hamburgerClose {
+      opacity: 0;
+    }
+    .icon-hamburgerOpen {
+      opacity: 1;
+    }
+    &.is-active {
+      .icon-hamburgerClose {
+        opacity: 1;
+        width: 1.9rem;
+      }
+      .icon-hamburgerOpen {
+        opacity: 0;
+        width: 2.7rem;
+      }
+    }
+  }
+
+  &_uppercase {
+    text-transform: uppercase;
+  }
+}
+
+.btn-city {
+  font-size: 1.1rem;
+  line-height: (15/11) * 1;
+  display: inline-flex;
+  align-items: center;
+  transition: var(--base-transition);
+  .icon {
+    width: .6rem;
+    height: .8rem;
+    flex-shrink: 0;
+    margin-right: .4rem;
+    transition: var(--base-transition);
+  }
+  &__text {
+    max-width: 15rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  &:hover {
+    color: var(--color-red);
+    .icon {
+      fill: var(--color-red);
+    }
+  }
+}
+
+.btn-search {
+  width: 5.5rem;
+  border-radius: 5rem .4rem .4rem 5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-red);
+  transition: var(--base-transition);
+  .icon {
+    fill: var(--color-white);
+    width: 2.1rem;
+    height: 2.1rem;
+  }
+  &:hover {
+    background-color: var(--color-red-hover);
+  }
+}

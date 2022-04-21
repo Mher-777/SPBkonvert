@@ -1,0 +1,43 @@
+.header {
+  &__top {
+    background-color: var(--color-base);
+    color: var(--color-white);
+    padding: 1.4rem 0;
+  }
+  &__info {
+    display: flex;
+    align-items: center;
+  }
+  &__phone {
+    margin-right: 4.5rem;
+    font-size: 2rem;
+    white-space: nowrap;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+  &__btn {
+    margin-right: 3.5rem;
+    &-city {
+      margin-bottom: .7rem;
+    }
+  }
+  &__cell {
+    display: flex;
+    &_left {
+      align-items: flex-end;
+    }
+    &_right {
+      justify-content: space-between;
+      max-width: 73rem;
+      width: 100%;
+    }
+  }
+  &__search {
+    max-width: 44rem;
+    width: 100%;
+    position: relative;
+  }
+}

@@ -1,0 +1,18 @@
+.menu-top {
+  &__item {
+    margin-right: 1.5rem;
+  }
+  &__link {
+    display: inline-block;
+    transition: var(--base-transition);
+    &.is-active {
+      padding: .3rem 1.2rem;
+      border-radius: .5rem;
+      border: 1px solid var(--color-white);
+    }
+    &:hover {
+      border-color: var(--color-red-light);
+      color: var(--color-red-light);
+    }
+  }
+}

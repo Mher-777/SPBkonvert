@@ -9,6 +9,8 @@ var config = {
 
 	body: $('body'),
 
+	html: $('html'),
+
 	header: $('header'),
 
 	getRandomInt: (min, max) => {

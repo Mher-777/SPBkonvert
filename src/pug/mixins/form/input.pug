@@ -1,0 +1,16 @@
+//mixin input (label, placeholder, name, icon)
+//    +e.field.input__(class=`${icon ? '_icon' : ''}`)&attributes(attributes)
+//        if(label)
+//            +e.label.p !{label}
+//        +e.parent
+//            if(icon)
+//                +icon(icon)
+//            +e.INPUT.field(name=name placeholder=placeholder type="text")
+
+mixin input (placeholder, name)
+    +e.field.input__
+        +e.parent
+            +e.icon-error.icon-error
+                //+icon('error')
+            +e.INPUT.field(name=name type="text")&attributes(attributes)
+            +e.placeholder !{placeholder}

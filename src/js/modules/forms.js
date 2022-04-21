@@ -56,6 +56,7 @@ var forms = {
 		$(".input__field")
 			.on("focus", (e) => {
 				let $input = $(e.target);
+				console.log($input)
 				$input.parent().addClass("is-focus");
 			})
 			.on("blur change", (e) => {

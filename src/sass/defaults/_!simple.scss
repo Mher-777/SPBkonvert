@@ -28,10 +28,8 @@ html {
 
 .container {
 	padding: 0 2rem;
-	max-width: 127rem;
-	z-index: 1;
+	max-width: 125.6rem;
 	margin: auto;
-	position: relative;
 	@include large-tablet {
 		max-width: 100%;
 	}
@@ -40,8 +38,10 @@ html {
 body {
 	position: relative;
 	font-size: 1.4rem;
-	font-family: 'Noto Sans', Arial, sans-serif;
+	line-height: (19/14) * 1;
+	font-family: var(--font-noto-sans);
 	color: var(--color-base);
+
 	&.js-lock {
 		overflow-x: hidden;
 		overflow-y: scroll;
@@ -56,6 +56,20 @@ button {
 	-moz-appearance: none;
 	color: inherit;
 	font-family: inherit;
+	outline: none;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+}
+
+button {
+	background-color: transparent;
+	color: inherit;
+	border: none;
+	cursor: pointer;
 }
 
 main {

@@ -15,7 +15,7 @@
         "img": "src/img/*.{jpg,png,webp,gif}",
         "attach": ["src/attach/**/.*", "src/attach/**/*.*"],
         "svg": "src/icons/**/*.svg",
-        "fonts": "src/fonts/*.*"
+        "fonts": "src/fonts/**/*.*"
     },
     "watch": {
         "html": "src/pug/**/*.pug",

@@ -3,6 +3,9 @@ import { sliders } from "./modules/sliders";
 import { select } from "./modules/select";
 import { forms } from "./modules/forms";
 import { modals } from "./modules/modals";
+import { tooltip } from "./modules/tooltip";
+import { menu } from "./modules/menu";
+import { search } from "./modules/search";
 import { config } from "./config";
 import "./vendor/dynamicAdapt"
 
@@ -15,6 +18,9 @@ App.prototype.init = () => {
 	modals.init();
 	sliders.init();
 	select.init();
+	tooltip.init();
+	menu.init();
+	search.init();
 
 	config.log('app init')
 	

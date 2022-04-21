@@ -1,0 +1,61 @@
+.tippy-bg {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background: rgba(42, 55, 71, 0.8);
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+div[data-theme="time-tooltip"] {
+  background-color: var(--color-white);
+  color: var(--color-base);
+  text-align: center;
+  border-radius: .5rem;
+  .tippy-content {
+    padding: 2.4rem 2rem;
+  }
+}
+.time-tooltip {
+  &__text {
+    display: block;
+    font-size: 1.2rem;
+  }
+  &__title {
+    display: block;
+    font-size: 1.6rem;
+  }
+}
+
+div[data-theme="city-tooltip"] {
+  background-color: var(--color-white);
+  color: var(--color-base);
+  text-align: center;
+  border-radius: .5rem;
+  .tippy-content {
+    padding: 2.8rem 5.5rem 4rem;
+  }
+}
+*[data-tippy-content] {
+  &.is-focus {
+    z-index: 9999;
+  }
+}
+
+.city-tooltip {
+  &__text,
+  &__title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  &__title {
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+  }
+  &__btn {
+    display: block;
+    max-width: max-content;
+    margin-top: 1rem;
+  }
+}

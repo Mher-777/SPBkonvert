@@ -1,0 +1,14 @@
+.feedback {
+  &__link {
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+    transition: var(--base-transition);
+    &:not(:last-child) {
+      margin-bottom: .4rem;
+    }
+    &:hover {
+      color: var(--color-red-light);
+    }
+  }
+}

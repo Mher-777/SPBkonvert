@@ -1,0 +1,24 @@
+.dropdown {
+  position: absolute;
+  background-color: var(--color-white);
+  padding: 3rem 2.7rem;
+  border-radius: .5rem;
+  width: 100%;
+  display: none;
+  &__item {
+    display: block;
+    &:not(:last-child) {
+      margin-bottom: 1.3rem;
+    }
+    &:hover {
+      a {
+        color: var(--color-red);
+      }
+    }
+    &.is-active {
+      a {
+        color: var(--color-red);
+      }
+    }
+  }
+}
