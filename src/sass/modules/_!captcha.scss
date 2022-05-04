@@ -1,0 +1,11 @@
+.captcha {
+  &__text {
+    font-size: 1.2rem;
+    margin-left: 1rem;
+    margin-bottom: .5rem;
+    &::after {
+      content: ' *';
+      color: var(--color-red);
+    }
+  }
+}

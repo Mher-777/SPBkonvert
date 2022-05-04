@@ -1,0 +1,14 @@
++b.modal._height.mfp-hide#login-phone
+    +e.top
+        +e.icon
+            +icon('lock')
+        +e.H4.title Войти в личный кабинет
+        +e.text Чтобы отслеживать статус вашего заказа <br> в личном кабинете!
+    +e.content
+        +e.FORM(action="#").form
+            +input('+7 (___) ___-__-__', 'phone', false, false, 'Контактный телефон')(data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="tel" required)._small
+            +btn()._small._fluid
+                +e.SPAN.text Получить код
+            +e.bottom.flex._vertical._center
+                +e.A(href="#login").link.js-modal Войти по паролю
+                +e.A(href="#registration").link._border._black.js-modal Зарегистрироваться

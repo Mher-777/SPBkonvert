@@ -5,3 +5,11 @@ mixin link(link, icon = 'longLeft')
                 block
         if icon
             +icon(icon)
+
+mixin linkIcon(link, icon)
+    +e.A(href=link).link.link__&attributes(attributes)
+        if icon
+            +icon(icon)
+        if block
+            +e.SPAN.text
+                block

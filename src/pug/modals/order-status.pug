@@ -1,0 +1,18 @@
++b.modal._height.mfp-hide#order-status
+    +e.A(href="#order").back.js-modal
+        +icon('longRight')
+    +e.top
+        +e.icon
+            +icon('clock')
+        +e.H4.title Статус заказа
+    +e.content
+        +e.FORM(action="#").form
+            +input('Номер заказа', 'number')(required)
+            +e.captcha._top.captcha__
+                +e.text Введите символы с изображения
+                +e.row.row-field
+                    +input('', '', '_width', true)(disabled)
+                    +input('', 'captcha', '_width')(required)
+            +e.desc._margin.required-text - Поля, обязательные к заполнению
+            +btn()._small._fluid
+                +e.SPAN.text Отследить заказ

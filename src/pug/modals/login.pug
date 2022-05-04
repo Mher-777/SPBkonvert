@@ -1,0 +1,19 @@
++b.modal._height.mfp-hide#login
+    +e.A(href="#login-phone").back.js-modal
+        +icon('longRight')
+    +e.top
+        +e.icon
+            +icon('lock')
+        +e.H4.title Войти в личный кабинет
+        +e.text Чтобы отслеживать статус вашего заказа <br> в личном кабинете!
+    +e.content
+        +e.FORM(action="#").form
+            +e.row.row-field
+                +input('E-mail', 'email')(data-inputmask="'alias': 'email'" required)
+                +input('Пароль', 'password')(type="password" required)
+            +checkbox('Запомнить меня', 'remember_me', true, false)
+            +btn()._small._fluid
+                +e.SPAN.text Войти
+            +e.bottom.flex._vertical._center
+                +e.A(href="#reset-password").link.js-modal Напомнить пароль
+                +e.A(href="#registration").link._border._black.js-modal Зарегистрироваться

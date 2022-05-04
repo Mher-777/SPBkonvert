@@ -24,4 +24,53 @@
       transform: translateX(.25rem);
     }
   }
+  &_small {
+    margin-left: 0;
+    .icon {
+      width: 2.3rem;
+      height: 2.3rem;
+      margin-right: .7rem;
+      margin-left: 0;
+    }
+  }
+  &_medium {
+    border-radius: .5rem;
+    margin-left: 0;
+    .icon {
+      width: 3rem;
+      margin-right: .7rem;
+      margin-left: 0;
+    }
+  }
+  &_gray {
+    background-color: rgba(#fff, .3);
+    color: var(--color-white);
+    .icon {
+      fill: var(--color-white);
+    }
+    &:hover {
+      background-color: var(--color-white);
+      color: var(--color-base);
+      border-color: var(--color-white);
+      .icon {
+        fill: var(--color-base);
+        transform: translateX(0);
+      }
+    }
+  }
+  &_white {
+    color: var(--color-white);
+    padding: 0;
+    border: none;
+    .icon {
+      fill: var(--color-white);
+    }
+    &:hover {
+      color: var(--color-red-light);
+      background-color: transparent;
+      .icon {
+        transform: translateX(0);
+      }
+    }
+  }
 }

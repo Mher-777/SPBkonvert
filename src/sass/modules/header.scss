@@ -1,4 +1,11 @@
 .header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 400;
+  background-color: var(--color-white);
   &__top {
     background-color: var(--color-base);
     color: var(--color-white);
@@ -43,5 +50,6 @@
     max-width: 44rem;
     width: 100%;
     position: relative;
+
   }
 }

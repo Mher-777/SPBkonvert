@@ -1,0 +1,42 @@
+.add-card {
+  &__field {
+    .icon-error {
+      display: none;
+    }
+  }
+  &__lable {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  &__day {
+
+  }
+  &__row {
+    display: inline-flex;
+    justify-content: space-between;
+    min-width: 8.5rem;
+    span {
+      padding-top: .4rem;
+    }
+  }
+  &__icon {
+    margin-left: 1.5rem;
+  }
+  &__info {
+    font-size: 1rem;
+    margin-left: 1rem;
+  }
+  &__top {
+    border-radius: .5rem;
+    padding: 1.8rem;
+    border: 1px solid #E9E9EB;
+  }
+  &__bottom {
+    background-color: #F8F8F8;
+    padding: 1rem 1.8rem 1.5rem;
+    border-top: none;
+    border: 1px solid #E9E9EB;
+    border-radius: 0 0 .5rem .5rem;
+  }
+}

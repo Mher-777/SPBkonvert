@@ -1,0 +1,12 @@
+mixin select(label, ...items)
+	+e.select.select__
+		if(label)
+			+e.label.p !{label}
+		+e.parent
+			+e.SELECT.select&attributes(attributes)
+				+e.OPTION.option(value="")
+				- var count = 0;
+				each item in items
+					- var checked = count == 0;
+					+e.OPTION.option(value=count) !{item}
+					- count++;

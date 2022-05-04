@@ -13,7 +13,7 @@
   font-size: 1.4rem;
   line-height: (19/14) * 1;
   min-width: 14rem;
-  padding: 1rem;
+  padding: 1rem 2rem;
   border: 1px solid transparent;
   .icon {
     flex-shrink: 0;
@@ -55,6 +55,29 @@
     }
   }
 
+  &_icon {
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      fill: var(--color-white);
+      margin-left: .9rem;
+      flex-shrink: 0;
+      transition: var(--base-transition);
+    }
+    &-medium {
+      .icon {
+        width: 2.5rem;
+        height: 2.5rem;
+      }
+    }
+    &-small {
+      .icon {
+        width: 3rem;
+        height: 1.3rem;
+      }
+    }
+  }
+
   &_green {
     background-color: var(--color-green);
     &::before {
@@ -68,6 +91,9 @@
   &_black {
     background-color: transparent;
     color: var(--color-base);
+    .icon {
+      fill: var(--color-base)
+    }
   }
 
   &_border {
@@ -79,11 +105,22 @@
       border-color: #C3C7CB;
       background-color: #F4F4F4;
     }
+    &-red {
+      &:hover {
+        border-color: var(--color-red);
+        color: var(--color-red);
+        background-color: var(--color-white);
+      }
+    }
   }
 
   &_tiny {
     font-size: 1.2rem;
     line-height: (14/12) * 1;
+  }
+
+  &_medium {
+    height: 4.5rem;
   }
 
   &_big {
@@ -111,6 +148,43 @@
   &_uppercase {
     text-transform: uppercase;
   }
+
+  &_small {
+    min-width: 20.5rem;
+  }
+
+  &_dashed {
+    border: 1px dashed var(--color-base);
+    font-weight: 600;
+    &::before {
+      display: none;
+    }
+    &:hover {
+      background-color: var(--color-base);
+      border-style: solid;
+      color: var(--color-white);
+      .icon {
+        fill: var(--color-white);
+      }
+    }
+  }
+  &_white-bg {
+    background-color: var(--color-white);
+  }
+  &_orange-bg {
+    background-color: var(--color-orange);
+  }
+  &_radius {
+    border-radius: 5rem;
+    .icon {
+      width: 1.7rem;
+      height: 1rem;
+    }
+  }
+  &_fluid {
+    width: 100%;
+    max-width: 100%;
+  }
 }
 
 .btn-city {
@@ -131,6 +205,9 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+  .tippy-bg {
+    z-index: 100;
   }
   &:hover {
     color: var(--color-red);

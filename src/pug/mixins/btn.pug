@@ -1,13 +1,17 @@
-mixin btn(link = false)
+mixin btn(link = false, icon = false)
     if (link)
         +e.A(href=link).btn.btn__&attributes(attributes)
             if block
                 block
+            if (icon)
+                +icon(icon)
 
     else
         +e.BUTTON.btn.btn__()&attributes(attributes)
             if block
                 block
+            if (icon)
+                +icon(icon)
 
 mixin btnCity()
     +e.BUTTON.btn-city.btn-city__()&attributes(attributes)

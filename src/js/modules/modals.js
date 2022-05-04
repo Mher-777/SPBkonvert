@@ -1,5 +1,6 @@
 import "magnific-popup";
 import { config } from "../config";
+import { tooltip } from "./tooltip";
 
 var modals = {
 
@@ -33,18 +34,11 @@ var modals = {
 		if(e && $(e.currentTarget).attr('data-input')){
 			$(modal + ' input[name="form"]').val($(e.currentTarget).data('input'))
 		}
-		if($(e.currentTarget).closest('.mfp-content').length) {
-			$.magnificPopup.close();
-			setTimeout(function () {
-				openPopup()
-			}, 300)
-			return false
-		}
 
 		function openPopup() {
 			$.magnificPopup.open({
 				tClose: 'Закрыть',
-				removalDelay: 300,
+				removalDelay: 250,
 				fixedContentPos: true,
 				fixedBgPos: true,
 				closeMarkup: '<div class="modal__close close js-close-modal"><svg class="icon icon-close" viewBox="0 0 15 15"><use xlink:href="app/icons/sprite.svg#close"></use></svg></div>',
@@ -54,18 +48,44 @@ var modals = {
 					type: 'inline'
 				},
 				callbacks: {
-					beforeOpen: () => {
+					beforeOpen: (e) => {
 						config.header.css('width', `calc(100% - ${config.scrollbarWidth()}px)`)
 					},
-
 					beforeClose: () => {
 						setTimeout(function () {
 							config.header.css('width', '')
-						}, 300)
+						}, 250)
+					},
+					open: function() {
+						$(modal).addClass('js-modal-show')
+						if ($(modal).hasClass("js-select-show")) {
+							$(modal).find('.js-select').select2('open')
+						}
+						if ($(modal).hasClass("js-tooltip-show")) {
+							tooltip.instance.setProps({
+								hideOnClick: false
+							})
+						}
+					},
+					close: function () {
+						$(modal).removeClass('js-modal-show')
+						if ($(modal).hasClass("js-tooltip-show")) {
+							tooltip.instance.setProps({
+								hideOnClick: true
+							})
+						}
 					}
 				}
 			}, 0);
 		}
+
+		if ($('.js-modal-show').length > 0) {
+			setTimeout(function () {
+				openPopup()
+			}, 250)
+			return true;
+		}
+
 		openPopup()
 	},
 

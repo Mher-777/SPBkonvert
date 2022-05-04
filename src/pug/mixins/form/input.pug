@@ -7,10 +7,16 @@
 //                +icon(icon)
 //            +e.INPUT.field(name=name placeholder=placeholder type="text")
 
-mixin input (placeholder, name)
-    +e.field.input__
+mixin input (placeholder, name, width, image = false, label = false)
+    +e.field.input__(class=`${width ? width : ''}`)
+        if (label)
+            +e.LABLE.label !{label}
         +e.parent
-            +e.icon-error.icon-error
-                //+icon('error')
+            if(!image)
+                +e.icon-error.icon-error
             +e.INPUT.field(name=name type="text")&attributes(attributes)
-            +e.placeholder !{placeholder}
+            if(image)
+                +e.captcha
+                    +e.IMG(src="/app/img/captcha.svg")
+            if(!image && placeholder)
+                +e.placeholder !{placeholder}

@@ -172,11 +172,31 @@ a {
 .css-text-right {
 	text-align: right;
 }
-
+.color-blue {
+	color: var(--color-blue);
+}
 img,
 svg {
 	vertical-align: top;
 	max-width: 100%;
+}
+
+input,
+textarea {
+	&:-webkit-autofill,
+	&:-webkit-autofill:hover,
+	&:-webkit-autofill:focus,
+	&:-webkit-autofill:active {
+		-webkit-box-shadow: 0 0 0 3rem #F0F8FF inset !important;
+	}
+}
+
+.absolute {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
 }
 
 .object-fit {
@@ -190,25 +210,45 @@ svg {
 .uppercase {
 	text-transform: uppercase;
 }
+
+.color-white {
+	color: var(--color-white);
+}
+
+.row-field {
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: -1rem;
+	& > * {
+		margin-left: 1rem;
+	}
+}
+
 .css-scrollbar {
 	overflow-y: auto;
 	/* width */
 	&::-webkit-scrollbar {
-		width: 3px;
+		width: .6rem;
 	}
 
 	/* Track */
 	&::-webkit-scrollbar-track {
-		background: rgba(#c4c4c4, 0.4);
+		background: transparent;
 	}
 
 	/* Handle */
 	&::-webkit-scrollbar-thumb {
-		background: gray;
+		background: #E8E8E8;
+		border-radius: .5rem;
 	}
 
 	/* Handle on hover */
 	// &::-webkit-scrollbar-thumb:hover {
 	// 	background: #555;
 	// }
+}
+
+.resize-animation-stopper * {
+	animation: none !important;
+	transition: none !important;
 }

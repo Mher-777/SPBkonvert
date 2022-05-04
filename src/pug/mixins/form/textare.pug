@@ -1,0 +1,6 @@
+mixin textarea (placeholder, name)
+    +e.field.textarea__
+        +e.parent
+            +e.icon-error.icon-error
+            +e.TEXTAREA.field(name=name)&attributes(attributes)
+            +e.placeholder !{placeholder}

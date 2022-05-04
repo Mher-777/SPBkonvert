@@ -1,0 +1,114 @@
+.footer {
+  &__bottom {
+    background-color: #202B38;
+    padding: 1.3rem 0;
+  }
+  &__copyright {
+    color: #8F9EB1;
+    text-align: center;
+  }
+  &__inner {
+    background-color: var(--color-base);
+    color: var(--color-white);
+    padding: 2.5rem 0 2rem;
+  }
+  &__address {
+    margin-bottom: 2rem;
+    margin-right: 5rem;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__cell {
+    flex: 1 1 auto;
+    &_left {
+      display: flex;
+    }
+  }
+  &__label {
+    display: block;
+    font-size: 1.2rem;
+  }
+  &__email {
+    a {
+      display: inline-block;
+      margin-bottom: .8rem;
+      font-weight: 700;
+    }
+  }
+  &__phone {
+    margin-bottom: 2rem;
+    a {
+      font-size: 1.8rem;
+    }
+  }
+  &__holder {
+    display: flex;
+  }
+  &__info {
+    margin-right: 6.5rem;
+  }
+  &__box {
+    display: flex;
+    flex-direction: column;
+  }
+  &__contacts {
+    margin-top: auto;
+    max-width: 49rem;
+  }
+  &__btn {
+    min-width: 18.5rem;
+    display: flex;
+    max-width: fit-content;
+    align-items: center;
+    height: 4.5rem;
+    border: 1px dashed var(--color-white);
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+    margin-left: auto;
+    padding-left: 1.3rem;
+    transition: var(--base-transition);
+    .icon {
+      max-width: 2.5rem;
+      margin-right: 1.5rem;
+      flex-shrink: 0;
+      transition: var(--base-transition);
+      fill: var(--color-white)
+    }
+    &_red {
+      background-color: var(--color-red);
+      border-color: var(--color-red);
+    }
+    &:hover {
+      background-color: var(--color-white);
+      border-color: var(--color-white);
+      color: var(--color-base);
+      .icon {
+        fill: var(--color-base)
+      }
+    }
+  }
+  &-contacts {
+    &__item {
+      width: 50%;
+      margin-top: 1rem;
+    }
+  }
+  &-menu {
+    &__list {
+      column-count: 2;
+      column-gap: 7rem;
+    }
+    &__item {
+      margin-bottom: 1rem;
+    }
+    &__link {
+      font-weight: 600;
+      color: var(--color-white);
+      transition: var(--base-transition);
+      &:hover {
+        color: var(--color-red-light);
+      }
+    }
+  }
+}

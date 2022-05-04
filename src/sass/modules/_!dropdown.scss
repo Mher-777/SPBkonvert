@@ -22,3 +22,44 @@
     }
   }
 }
+
+.dropdown-menu {
+  &__tabs {
+    min-width: 14rem;
+    max-width: 22rem;
+    margin-right: 5.5rem;
+    flex: 1 0 auto;
+  }
+  &__tab {
+    display: block;
+    margin-bottom: 1.5rem;
+    &.is-active {
+      font-weight: 700;
+      color: var(--color-red);
+    }
+  }
+  &__content {
+    flex: 1 1 auto;
+  }
+  &__box {
+    display: none;
+    text-align: center;
+  }
+  &__image {
+    max-width: 44.5rem;
+  }
+  &__text {
+    text-align: left;
+    p {
+      margin-top: 2rem;
+    }
+    a {
+      color: var(--color-red);
+      text-decoration-line: underline;
+      text-decoration-skip-ink: none;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}

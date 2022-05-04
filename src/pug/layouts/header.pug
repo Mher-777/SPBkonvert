@@ -19,8 +19,8 @@
                         +e.A(href="tel:88003330601" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone 8 (800) 333-06-01
                         +e.A(href="tel:88123396160" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone 8 (812) 339-61-60
                     +e.feedback.feedback__
-                        +e.A(href="#feedback").link Обратная связь
-                        +e.A(href="#request-call").link Заказать звонок
+                        +e.A(href="#feedback").link.js-modal Обратная связь
+                        +e.A(href="#request-call").link.js-modal Заказать звонок
     +e.main
         .container
             +e.inner
@@ -37,7 +37,7 @@
                             <button class="city-tooltip__btn btn btn_green js-close-tooltip" type="button">
                                 Да
                             </button>
-                            <button class="city-tooltip__btn btn btn_black btn_border" type="button">
+                            <button class="city-tooltip__btn btn btn_black btn_border js-modal" data-modal="#choose-city" type="button">
                                 Другой город
                             </button>
                         ` data-tippy-theme="city-tooltip" data-tippy-interactive="true" data-tippy-trigger="click") Санкт-Петербург
@@ -46,7 +46,7 @@
                                 +e.IMG(src="/app/img/logo.svg" alt="Логотоп").image
                 +e.cell._right
                     +e.search.search__
-                        +e.FORM(action="").form
+                        +e.FORM(action="#").form
                             +e.field
                                 +e.INPUT(placeholder="Поиск...").input.js-search
                                 +e.BUTTON(type="button").delete.js-search-delete
@@ -74,10 +74,10 @@
                                     +e.A(href="#").link Конверты "С праздником"
 
                     +e.features.features__.flex
-                        +e.A(href="#" data-count="3").link
+                        +e.A(href="#order" data-count="3").link.js-modal
                             +icon('order')
                             +e.text Заказы
-                        +e.A(href="#").link
+                        +e.A(href="#login-phone").link.js-modal
                             +icon('user')
                             +e.text Войти
                         +e.A(href="#" data-count="12").link

@@ -1,0 +1,24 @@
++b.modal._big.mfp-hide#feedback
+    +e.top
+        +e.H4.title Обратная связь
+        +e.text Здесь вы можете оставить отзыв, пожелание, жалобу <br> или задать вопрос по своему заказу
+    +e.content
+        +e.FORM(action="#").form
+            +switcher('item', 'Вопрос по моему заказу', 'Отзывы', 'Вопрос о товаре, цене, условиях договора', 'Рекламации по товару, возврат товара', 'Жалоба на обслуживание', 'Ошибка на сайте', 'Коммерческое предложение', 'Выразить благодарность', 'Создать заказ в свободной форме')
+            +e.row.row-field
+                +input('Ваше имя', 'name', '_width-small')(required)
+                +input('Ваш E-mail', 'email', '_width-small')(inputmode="email")
+                +input('+7 (___) ___-__-__', 'phone', '_width-small')(data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="tel" required)
+                +input('Название организации', 'organizations', '_width')
+                +input('Город', 'city', '_width')
+                +textarea('Ваше сообщение', 'comment')(required)
+            +e.captcha.captcha__
+                +e.text Введите символы с изображения
+                +e.row.row-field
+                    +input('', '', '_width-small', true)(disabled)
+                    +input('', 'captcha', '_width-small')(required)
+            +checkbox('Я согласен с <a href="#">условиями обработки данных</a>', 'conditions', true, false)
+            +e.desc.required-text - Поля, обязательные к заполнению
+            +btn()._small._icon._icon-small
+                +e.SPAN.text Отправить
+                +icon('fast')

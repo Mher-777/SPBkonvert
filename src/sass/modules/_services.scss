@@ -1,0 +1,114 @@
+.service {
+  &-item {
+    position: relative;
+    width: calc(25% - 2rem);
+
+    &__image {
+      z-index: -1;
+    }
+
+    &__content {
+      min-height: 30.5rem;
+      padding: 2rem 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--base-transition);
+    }
+    &__title {
+      text-transform: uppercase;
+
+      span {
+        text-transform: none;
+        font-size: 1.8rem;
+      }
+    }
+    &__info {
+      display: flex;
+      flex-wrap: wrap;
+      max-height: 19rem;
+      overflow-y: auto;
+      transition: var(--base-transition);
+      opacity: 0;
+      margin-bottom: 2rem;
+      text-align: left;
+    }
+    &__link {
+      display: inline-block;
+      transition: var(--base-transition);
+      &:hover {
+        color: var(--color-red) !important;
+      }
+    }
+    &__elem {
+      width: 24.5rem;
+      margin-bottom: .8rem;
+      padding-left: 1.5rem;
+      position: relative;
+      &::before {
+        content: '';
+        position: absolute;
+        width: .3rem;
+        height: .3rem;
+        background-color: var(--color-white);
+        left: 0;
+        border-radius: 50%;
+        top: .7rem;
+      }
+    }
+    &_big {
+      width: calc(50% - 2rem);
+    }
+    &_right {
+      text-align: right;
+    }
+    &_bottom {
+      .service-item__title {
+        margin-top: auto;
+      }
+    }
+    &:hover {
+      color: var(--color-white);
+      .service-item__link {
+        color: var(--color-white);
+      }
+      .service-item__info {
+        opacity: 1;
+      }
+      .service-item__content {
+        background: rgba(42, 55, 71, 0.8);
+        backdrop-filter: blur(1rem);
+      }
+    }
+  }
+}
+.service-banner {
+  position: relative;
+  width: calc(50% - 2rem);
+  padding: 3.5rem 3rem;
+  min-height: 40rem;
+  &__image {
+    z-index: -1;
+  }
+
+  &__content {
+    min-height: 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  &__btn {
+    margin-top: auto;
+  }
+}
+.services {
+  margin-top: 2rem;
+  &__row {
+    margin-left: -2rem;
+  }
+  &__col {
+    margin-bottom: 2rem;
+    margin-left: 2rem;
+  }
+}

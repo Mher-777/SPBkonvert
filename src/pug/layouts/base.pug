@@ -64,10 +64,22 @@ html(class=html.classList)&attributes(html.attrs)
 
 		block header
 			include header
+		block menu
+			include ../modules/menu
 		block content
 		block footer 
 			include footer
 		block popup
+			include ../modals/request-call
+			include ../modals/feedback
+			include ../modals/choose-city
+			include ../modals/login-phone
+			include ../modals/login
+			include ../modals/reset-password
+			include ../modals/registration
+			include ../modals/order-payment
+			include ../modals/order-status
+			include ../modals/order
 		+btnFavorites('13')
 		block scripts
 			script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js")

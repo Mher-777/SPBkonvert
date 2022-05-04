@@ -3,20 +3,22 @@ import { config } from "../config";
 var search = {
     dropdown: $('.js-search-dropdown'),
     delete: $('.js-search-delete'),
+    input: $(".js-search"),
+
     init: () => {
-        $(".js-search")
+        search.input.closest('.search').append("<div class='tippy-bg' style='display: none'></div>")
+        search.input
             .on("focus, click", (e) => {
                 let $input = $(e.target);
                 const dropdown = search.dropdown;
-                $input.closest('.search').addClass("is-focus");
-                config.body.find(".tippy-bg").fadeIn(200)
+                $input.closest('.search').addClass("is-focus").find(".tippy-bg").fadeIn(200);
                 dropdown.fadeIn(200)
                 search.changeValue($input, dropdown)
             })
             .on("blur change", (e) => {
                 let $input = $(e.target);
                 search.dropdown.fadeOut(200)
-                config.body.find(".tippy-bg").fadeOut(200, function() {
+                $input.closest('.search').find(".tippy-bg").fadeOut(200, function() {
                     $input.closest('.search').removeClass("is-focus");
                 })
 

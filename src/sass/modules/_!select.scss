@@ -1,0 +1,91 @@
+
+.select2-container .select2-selection--single {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--color-white);
+  border: 1px solid var(--color-base);
+  border-radius: .5rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  color: var(--color-base);
+  font-size: 1.2rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow b {
+  display: none;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+  position: static;
+  background-image: url("data:image/svg+xml,%3Csvg width='9' height='5' viewBox='0 0 9 5' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.065 3.4685e-07L4.5 3.09042L7.9425 4.62248e-08L9 0.951417L4.5 5L-1.76969e-07 0.951417L1.065 3.4685e-07Z' fill='%2300252F'/%3E%3C/svg%3E%0A");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: .9rem;
+  height: .5rem;
+  flex-shrink: 0;
+  margin-right: 1.5rem;
+  display: none;
+}
+
+.select2-container--open {
+  .select2-selection__arrow {
+    transform: rotate(180deg);
+  }
+}
+
+.select2-results__option--selected {
+
+}
+
+.select2-dropdown {
+  border-color: transparent;
+  border-radius: .6rem;
+}
+
+.select2-results__options {
+  max-height: 30rem !important;
+  padding-top: 1rem;
+}
+
+.select2-results__option {
+  font-size: 1.4rem;
+  padding: .5rem 1rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  position: relative;
+  &::before {
+    content: '';
+    width: 1.9rem;
+    height: 1.3rem;
+    background-image: url("data:image/svg+xml,%3Csvg width='19' height='13' viewBox='0 0 19 13' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M6.78571 13L0 6.75L1.9 5L6.78571 9.5L17.1 0L19 1.75L6.78571 13Z' fill='%23CA0D0D'/%3E%3C/svg%3E%0A");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    right: .5rem;
+    display: none;
+  }
+}
+
+.select2-container--default .select2-results__option--highlighted.select2-results__option--selectable {
+  background-color: transparent;
+  color: var(--color-red);
+}
+.select2-container--default .select2-results__option--selected {
+  color: var(--color-red);
+  background-color: transparent;
+  &::before {
+    display: block;
+  }
+}
+.select2-selection__placeholder {
+  font-size: 1.2rem;
+  color: var(--color-base) !important;
+}

@@ -9,6 +9,22 @@
 	}
 }
 
+.content li,
+.li {
+	position: relative;
+	padding-left: 1.5rem;
+	&::before {
+		content: '';
+		position: absolute;
+		width: .3rem;
+		height: .3rem;
+		background-color: var(--color-base);
+		left: 0;
+		border-radius: 50%;
+		top: .7rem;
+	}
+}
+
 .content ul,
 .content ol {
 }
@@ -59,14 +75,21 @@
 
 .h3,
 .content h3 {
+	font-size: 2.4rem;
+	line-height: (28/24) * 1;
 }
 
 .h4,
 .content h4 {
+	font-size: 2rem;
+	font-weight: 600;
+	margin-bottom: 2rem;
 }
 
 .h5,
 .content h5 {
+	font-size: 1.8rem;
+	font-weight: 500;
 }
 
 .h6,

@@ -1,0 +1,54 @@
++b.modal._height.mfp-hide#order-payment-1(data-step-modal="#order-payment-2")
+    +e.top
+        +e.H4.title Безопасно оплатить заказ
+        +e.text._margin Просим вас производить оплату только после подтверждения наличия товара нашим менеджером.
+    +e.content
+        +e.FORM(action="#").form
+            +input('Сумма платежа', 'price')(inputmode="numeric" required)
+            +input('Номер заказа', 'number')(required)
+            +input('Ваш E-mail', 'email')(data-inputmask="'alias': 'email'")
+            +input('+7 (___) ___-__-__', 'phone')(data-inputmask="'mask': '+7 (999) 999-99-99'" inputmode="tel")
+            +textarea('Комментарий', 'comment')._small
+            +e.desc._vertical.required-text - Поля, обязательные к заполнению
+            +btn(false, 'onlineCard')._fluid._medium._green._icon._icon-medium
+                +e.SPAN.text Оплатить банковской картой
+            +e.icons.flex._center
+                +e.IMG(src="/app/img/visa.svg" alt="Виза карт")
+                +e.IMG(src="/app/img/master.svg" alt="Мастер карт")
+                +e.IMG(src="/app/img/mir.svg" alt="Мир карт")
+
++b.modal._height._padding.mfp-hide#order-payment-2(data-step-modal="#order-payment-success")
+    +e.top
+        +e.H4.title Оплата банковской картой
+        +e.text._margin-top.css-text-left Итого с учетом доставки и НДС:
+            +e.price 8 300 ₽
+    +e.content
+        +e.FORM(action="#").form
+            +e.card.add-card__
+                +e.top
+                    +e.icons.flex._right
+                        +e.IMG(src="/app/img/visa.svg" alt="Виза карт").icon
+                        +e.IMG(src="/app/img/master.svg" alt="Мастер карт").icon
+                        +e.IMG(src="/app/img/mir.svg" alt="Мир карт").icon
+                    +input('', 'card', false, false, 'Номер карты')(data-inputmask="'mask': '9999-9999-9999-9999'" inputmode="numeric" required)
+                    +e.day
+                        +e.SPAN.lable Действует до
+                        +e.row
+                            +input(false, 'month', '_tiny')(data-inputmask="'mask': '99'" inputmode="numeric" placeholder="ММ" required)
+                            +e.SPAN /
+                            +input(false, 'year', '_tiny')(data-inputmask="'mask': '99'" inputmode="numeric" placeholder="ГГ" required)
+                +e.bottom
+                    +e.SPAN.lable CVV / CVC
+                    +e.row
+                        +input(false, 'cvv', '_tiny')(data-inputmask="'mask': '999'" inputmode="numeric" placeholder="000" required)
+                        +e.info три цифры <br> с обратной стороны карты
+
+            +checkbox('Запомнить эту карту. Это безопасно. <br> Сохраняя карту, вы соглашаетесь с <br> <a href="#" class="color-blue">условиями привязки карты</a>', 'remember', true, false)._left
+            +btn(false)._fluid._medium._green._icon._icon-medium
+                +e.SPAN.text Оплатить 8 300 ₽
+
+
++b.modal._height._padding.mfp-hide#order-payment-success
+    +e.success.css-text-center
+        +icon('success')
+        | Ваш заказ <br> успешно оплачен!

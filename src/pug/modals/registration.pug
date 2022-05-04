@@ -1,0 +1,20 @@
++b.modal._height.mfp-hide#registration
+    +e.A(href="#login-phone").back.js-modal
+        +icon('longRight')
+    +e.top
+        +e.icon
+            +icon('registration')
+        +e.H4.title Регистрация
+        +e.text Авторизация на сайте позволит вам отслеживать <br> статус вашего заказа в личном кабинете!
+    +e.content
+        +e.FORM(action="#").form
+            +e.row.row-field
+                +input('Ваше имя или название организации', 'name')(required)
+                +input('ИНН (для юрлиц и ИП)', 'iin')
+                +input('E-mail', 'email')(data-inputmask="'alias': 'email'" required)
+                +input('Пароль', 'password')(type="password" id="password_repeat" required)
+                +input('Подтвердите пароль', 'password_repeat')(type="password" required)
+            +checkbox('Запомнить меня', 'remember_me', true, false)
+            +e.desc.required-text - Поля, обязательные к заполнению
+            +btn()._small._fluid
+                +e.SPAN.text Зарегистрироваться

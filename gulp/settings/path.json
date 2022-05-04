@@ -12,7 +12,7 @@
         "html": "src/pug/pages/**/*.pug",
         "js": "src/js/app.js",
         "css": "src/sass/app.scss",
-        "img": "src/img/*.{jpg,png,webp,gif}",
+        "img": "src/img/**/*.{jpg,png,webp,gif}",
         "attach": ["src/attach/**/.*", "src/attach/**/*.*"],
         "svg": "src/icons/**/*.svg",
         "fonts": "src/fonts/**/*.*"

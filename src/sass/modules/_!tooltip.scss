@@ -5,7 +5,11 @@
   background: rgba(42, 55, 71, 0.8);
   top: 0;
   left: 0;
-  z-index: 1000;
+  z-index: -1;
+  cursor: auto;
+  &_menu {
+    z-index: 100;
+  }
 }
 div[data-theme="time-tooltip"] {
   background-color: var(--color-white);
@@ -16,6 +20,17 @@ div[data-theme="time-tooltip"] {
     padding: 2.4rem 2rem;
   }
 }
+//div[data-tippy-root] {
+//  &::before {
+//    content: '';
+//    position: fixed;
+//    top: 0;
+//    left: 0;
+//    height: 100vh;
+//    width: 100%;
+//    background-color: red;
+//  }
+//}
 .time-tooltip {
   &__text {
     display: block;
@@ -39,6 +54,7 @@ div[data-theme="city-tooltip"] {
 *[data-tippy-content] {
   &.is-focus {
     z-index: 9999;
+    position: relative;
   }
 }
 
