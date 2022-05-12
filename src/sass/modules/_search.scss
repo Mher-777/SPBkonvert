@@ -3,11 +3,24 @@
     z-index: 9999;
     .search__input {
       border-color: var(--color-white);
+      @include small-tablet {
+        opacity: 1;
+        width: 44rem;
+        padding: 1.3rem 7.5rem 1.3rem 2.5rem;
+      }
+    }
+    .search__delete {
+      @include small-tablet {
+        opacity: 1;
+      }
     }
   }
   &__field {
     position: relative;
     overflow: hidden;
+    @include small-tablet {
+      overflow: visible;
+    }
   }
   &__input {
     height: 5.2rem;
@@ -17,21 +30,49 @@
     display: block;
     width: 100%;
     transition: var(--base-transition);
+    font-size: 1.4rem;
     &::placeholder {
       font-weight: 500;
       color: var(--color-base);
       font-size: 1.4rem;
     }
+    @include large-desktop {
+      padding: 1.3rem 7.5rem 1.3rem 1.7rem;
+    }
+    @include small-tablet {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 5.5rem;
+      z-index: 5;
+      padding: 1.3rem 2.5rem;
+      opacity: 0;
+    }
   }
+
   &__btn {
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
+    @include small-tablet {
+      height: 5rem;
+      position: relative;
+      z-index: 6;
+      pointer-events: none;
+    }
   }
   &__dropdown {
     top: calc(100% + .5rem);
     max-height: 35rem;
+    overflow-y: auto;
+    @include large-desktop {
+      padding: 2.5rem;
+    }
+    @include small-tablet {
+      width: 44rem;
+      right: 0;
+    }
   }
   &__delete {
     width: 1.2rem;
@@ -41,5 +82,9 @@
     transform: translateY(-50%);
     right: 6.5rem;
     display: none;
+    @include small-tablet {
+      opacity: 0;
+      z-index: 7;
+    }
   }
 }

@@ -1,19 +1,49 @@
 .menu-top {
   &__item {
     margin-right: 1.5rem;
+    position: relative;
+
+    &.is-active {
+      .menu-top__link {
+        padding: .3rem 1.2rem;
+        border-radius: .5rem;
+        border: 1px solid var(--color-white);
+      }
+    }
+
+    &:hover {
+      .menu-top__link {
+        border-color: var(--color-red-light);
+        color: var(--color-red-light);
+      }
+    }
   }
+
+  &__sublist {
+    position: absolute;
+    left: -2.5rem;
+    top: calc(100% + 1rem);
+    width: 23.5rem;
+    box-shadow: 0 0 3rem rgba(0, 0, 0, 0.2);
+    border-radius: .5rem;
+    color: var(--color-base);
+    background-color: var(--color-white);
+    z-index: 5;
+    font-weight: 500;
+    display: none;
+  }
+
+  &__sublink {
+
+  }
+
   &__link {
     display: inline-block;
     transition: var(--base-transition);
-    &.is-active {
-      padding: .3rem 1.2rem;
-      border-radius: .5rem;
-      border: 1px solid var(--color-white);
-    }
-    &:hover {
-      border-color: var(--color-red-light);
-      color: var(--color-red-light);
-    }
+  }
+
+  @include small-tablet {
+    display: none;
   }
 }
 
@@ -24,8 +54,14 @@
   background-color: var(--color-white);
   z-index: 500;
   display: none;
+  @include small-tablet {
+    max-width: 34.5rem;
+  }
   .container {
     height: 100%;
+    @include small-tablet {
+      display: block;
+    }
   }
   &__list {
     max-width: 30rem;
@@ -34,6 +70,16 @@
     height: calc(100% - 1rem);
     overflow-y: auto;
     flex-shrink: 0;
+    @include small-tablet {
+      padding-right: 0;
+      padding-left: 0;
+      padding-top: 0;
+      max-width: calc(100% + 4rem);
+      margin: 0 -2rem;
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
   }
   &__item {
     &_title {
@@ -41,12 +87,41 @@
         margin-top: 2rem;
         padding-top: 1rem;
         border-top: 2px solid #E8E8E8;
+        @include small-tablet {
+          border-top: none;
+          margin-top: 0;
+          padding-top: 0;
+        }
+      }
+      @include small-tablet {
+        background-color: #F7F7F7;
+        min-height: 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-right: 2.5rem;
+        margin-bottom: .2rem;
+        &::after {
+          content: '';
+          display: inline-block;
+          width: 1.3rem;
+          height: 2.5rem;
+          background-image: url("data:image/svg+xml,%3Csvg width='14' height='25' viewBox='0 0 14 25' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M13.033 11.9495L13.0398 11.9579C13.0769 12.0036 13.1086 12.0534 13.1343 12.1063L13.1647 12.1487L13.184 12.1757L13.1957 12.2067C13.2681 12.4002 13.2681 12.6137 13.1957 12.8071L13.184 12.8381L13.1647 12.8651L13.1343 12.9075C13.1086 12.9604 13.0769 13.0102 13.0398 13.0559L13.033 13.0643L13.0255 13.0721L2.12574 24.3435C2.12569 24.3435 2.12564 24.3436 2.12559 24.3436C1.97716 24.4973 1.77388 24.5855 1.56021 24.5878C1.34646 24.5901 1.14127 24.5062 0.9896 24.3556C0.838047 24.2052 0.752277 24.0005 0.750045 23.787C0.747812 23.5734 0.829281 23.3671 0.977608 23.2134L0.977737 23.2133L11.3292 12.5069L0.977738 1.80051L0.97761 1.80038C0.829282 1.64674 0.747813 1.44037 0.750046 1.22682C0.752278 1.01328 0.838048 0.808657 0.989601 0.658192L13.033 11.9495ZM13.033 11.9495L13.0255 11.9417M13.033 11.9495L13.0255 11.9417M13.0255 11.9417L2.12574 0.670351L13.0255 11.9417Z' fill='%232A3747' stroke='%232A3747' stroke-width='0.5'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          background-size: cover;
+          background-position: center;
+        }
       }
     }
     &.is-active {
       .menu__link {
         background-color: var(--color-red);
         color: var(--color-white);
+      }
+    }
+    @include small-tablet {
+      &:not(.menu__item_title) {
+        display: none;
       }
     }
   }
@@ -62,6 +137,9 @@
     &:hover {
       color: var(--color-red);
     }
+    @include small-tablet {
+      margin: 0;
+    }
   }
   &__link {
     border-radius: .5rem;
@@ -76,6 +154,9 @@
     padding: 5rem 3.5rem;
     flex: 1 1 auto;
     overflow-y: auto;
+    @include small-tablet {
+      display: none;
+    }
   }
   &__dropdown {
     display: none;
@@ -88,6 +169,10 @@
     width: 2rem;
     height: 2rem;
     fill: var(--color-base);
+    @include small-tablet {
+      fill: var(--color-white);
+      right: -3.5rem;
+    }
   }
 }
 

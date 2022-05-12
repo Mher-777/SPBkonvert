@@ -41,6 +41,9 @@
       margin-right: .7rem;
       margin-left: 0;
     }
+    @include small-tablet {
+      padding: 0.6rem 0.9rem;
+    }
   }
   &_gray {
     background-color: rgba(#fff, .3);
@@ -55,6 +58,13 @@
       .icon {
         fill: var(--color-base);
         transform: translateX(0);
+      }
+    }
+    @include large-mobile {
+      background-color: var(--color-white);
+      color: var(--color-base);
+      .icon {
+        fill: var(--color-base);
       }
     }
   }

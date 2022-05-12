@@ -4,5 +4,8 @@
   }
   &__image {
     width: 24rem;
+    @include large-desktop {
+      width: 18rem;
+    }
   }
 }

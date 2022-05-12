@@ -26,6 +26,8 @@ var search = {
                 let $input = $(e.target);
                 search.deleteValue($input)
             })
+
+
     },
 
     changeValue: (elem, dropdown) => {

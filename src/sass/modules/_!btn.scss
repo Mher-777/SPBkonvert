@@ -53,6 +53,9 @@
       transform: translate(-50%, -50%);
       transition: var(--base-transition);
     }
+    @include small-tablet {
+
+    }
   }
 
   &_icon {
@@ -143,6 +146,7 @@
         width: 2.7rem;
       }
     }
+
   }
 
   &_uppercase {
@@ -246,6 +250,7 @@
   top: 21rem;
   left: 0;
   transition: var(--base-transition);
+  z-index: 5;
   .icon {
     width: 2.2rem;
     height: 1.8rem;
@@ -262,5 +267,8 @@
   }
   &:hover {
     background-color: var(--color-red-hover);
+  }
+  @include large-mobile {
+    display: none;
   }
 }

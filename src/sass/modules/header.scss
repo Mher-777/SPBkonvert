@@ -6,23 +6,62 @@
   right: 0;
   z-index: 400;
   background-color: var(--color-white);
+  @include large-mobile {
+    display: flex;
+    flex-direction: column-reverse;
+  }
   &__top {
     background-color: var(--color-base);
     color: var(--color-white);
     padding: 1.4rem 0;
+    transition: var(--base-transition);
+    @include large-desktop {
+      padding: 1.2rem 0;
+    }
+    @include small-tablet {
+      padding: 1.4rem 0;
+    }
+    @include large-mobile {
+      padding-top: 1.2rem;
+      overflow: hidden;
+    }
   }
   &__main {
     box-shadow: 0 .4rem 1.5rem rgba(0, 0, 0, 0.1);
     padding: 1rem 0 2.4rem;
+    background-color: var(--color-white);
+    z-index: 3;
+    @include large-desktop {
+      padding-bottom: 3rem;
+    }
+
+    @include small-tablet {
+      padding: .8rem 0;
+    }
+
+    @include large-mobile {
+      padding: 1.1rem 0;
+    }
   }
   &__info {
     display: flex;
     align-items: center;
+    @include small-tablet {
+      justify-content: space-between;
+      width: 100%;
+    }
+    @include large-mobile {
+      display: block;
+    }
   }
   &__phone {
     margin-right: 4.5rem;
     font-size: 2rem;
     white-space: nowrap;
+    @include large-tablet {
+      font-size: 1.6rem;
+      margin-right: 1.5rem;
+    }
   }
   &__inner {
     display: flex;
@@ -33,23 +72,71 @@
     margin-right: 3.5rem;
     &-city {
       margin-bottom: .7rem;
+      @include large-mobile {
+        display: none;
+      }
+    }
+    @include large-desktop {
+      margin-right: 3rem;
+    }
+    @include small-tablet {
+      min-width: 5.2rem;
+      max-width: 5.2rem;
+      .btn__text {
+        display: none;
+      }
+      .btn__hamburger {
+        margin-right: 0;
+      }
+    }
+    @include large-mobile {
+      margin-right: 2rem;
     }
   }
   &__cell {
     display: flex;
     &_left {
       align-items: flex-end;
+      @include large-mobile {
+        align-items: center;
+      }
     }
     &_right {
       justify-content: space-between;
       max-width: 73rem;
       width: 100%;
+      @include large-tablet {
+        max-width: 54.5rem;
+      }
+      @include small-tablet {
+        width: auto;
+        flex-direction: row-reverse;
+      }
     }
   }
   &__search {
     max-width: 44rem;
     width: 100%;
     position: relative;
-
+    @include large-tablet {
+      max-width: 30rem;
+    }
+    @include small-tablet {
+      max-width: 5.5rem;
+    }
+  }
+  &__features {
+    @include large-mobile {
+      display: none;
+    }
+  }
+  &__desc {
+    @include large-mobile {
+      font-size: 1.6rem;
+      line-height: (22/16) * 1;
+      text-align: center;
+      color: #8F9EB1;
+      margin-bottom: 1rem;
+    }
   }
 }

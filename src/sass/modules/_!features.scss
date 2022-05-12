@@ -1,5 +1,8 @@
 .features {
   margin-left: -4.8rem;
+  @include small-tablet {
+    margin-left: 0;
+  }
   &__text {
     display: block;
     margin-top: auto;
@@ -13,11 +16,21 @@
     position: relative;
     transition: var(--base-transition);
     margin-left: 4.8rem;
+    @include large-desktop {
+      margin-left: 3.5rem;
+    }
+    @include small-tablet {
+      margin-left: 0;
+      margin-right: 3.5rem;
+    }
     .icon {
       max-width: 3.5rem;
       fill: var(--color-base);
       margin-bottom: 1rem;
       transition: var(--base-transition);
+      @include small-tablet {
+        margin-bottom: .6rem;
+      }
     }
     &[data-count] {
       &::before {
@@ -43,4 +56,5 @@
       }
     }
   }
+
 }

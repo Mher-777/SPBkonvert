@@ -17,8 +17,16 @@ html {
 		overflow-y: scroll;
 	}
 
+	@include large-desktop {
+		font-size: 100vw / (1440/10);
+	}
+
 	@include large-tablet {
 		font-size: 100vw / (1000/10);
+	}
+
+	@include small-tablet {
+		font-size: 100vw / (768/10);
 	}
 
 	@include large-mobile {
@@ -45,6 +53,11 @@ body {
 	&.js-lock {
 		overflow-x: hidden;
 		overflow-y: scroll;
+	}
+
+	@include small-tablet {
+		font-size: 1.2rem;
+		line-height: (16/12) * 1;
 	}
 }
 
@@ -251,4 +264,24 @@ textarea {
 .resize-animation-stopper * {
 	animation: none !important;
 	transition: none !important;
+}
+
+.mobile-show {
+	display: none !important;
+	@include large-mobile {
+		display: block !important;
+	}
+}
+
+.table-show {
+	display: none !important;
+	@include small-tablet {
+		display: block !important;
+	}
+}
+
+.desktop-show {
+	@include large-mobile {
+		display: none !important;
+	}
 }

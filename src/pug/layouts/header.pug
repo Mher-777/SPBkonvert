@@ -4,8 +4,8 @@
             +e.row.flex._justify._vertical
                 +e.menu.menu-top__
                     +e.UL.list.flex._vertical
-                        +e.LI.item
-                            +e.A(href="#").link.is-active Печать
+                        +e.LI.item.is-active
+                            +e.A(href="#").link Печать
                         +e.LI.item
                             +e.A(href="#").link Доставка
                         +e.LI.item
@@ -14,12 +14,24 @@
                             +e.A(href="#").link Контакты
                         +e.LI.item
                             +e.A(href="#").link О компании
+                            +e.UL.sublist
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        | О компании
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        | Онлайн оплата
+                                +e.LI.subitem
+                                    +e.A(href="#" data-count="13").sublink
+                                        | Сравнение товаров
                 +e.info
                     +e.phones.flex._center
-                        +e.A(href="tel:88003330601" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone 8 (800) 333-06-01
-                        +e.A(href="tel:88123396160" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone 8 (812) 339-61-60
+                        +e.desc.mobile-show Время работы офиса: Пн-Пт с 10:00 до 18:00
+                        +e.A(href="tel:88003330601" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone.desktop-show 8 (800) 333-06-01
+                        +e.A(href="tel:88123396160" data-tippy-content="<span class='time-tooltip__text'>Время работы офиса:</span><span class='time-tooltip__title'>Пн-Пт с 10:00 до 18:00</span>" data-tippy-theme="time-tooltip").phone.desktop-show 8 (812) 339-61-60
                     +e.feedback.feedback__
                         +e.A(href="#feedback").link.js-modal Обратная связь
+                        +icon('phone').mobile-show
                         +e.A(href="#request-call").link.js-modal Заказать звонок
     +e.main
         .container

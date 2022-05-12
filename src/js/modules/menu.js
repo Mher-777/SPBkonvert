@@ -6,6 +6,7 @@ var menu = {
     tab: $('.js-tab'),
     content: $('.js-tab-content'),
     dropdown: $('.js-menu-dropdown'),
+    OldScrollPosition: 0,
 
     dropDown: (item = menu.item, dropdown = menu.dropdown) => {
 
@@ -57,11 +58,53 @@ var menu = {
         })
     },
 
+    scrollState: () => {
+        const $header_top = $('.header__top');
+
+        if ($(window).width() > 580) {
+            $header_top.removeAttr('style')
+            return false
+        }
+
+        const ScrollDown = menu.OldScrollPosition < window.scrollY;
+
+        menu.OldScrollPosition = window.scrollY;
+
+        const HEADER_TOP_HEIGHT = $header_top.outerHeight();
+
+        if (window.scrollY > HEADER_TOP_HEIGHT) {
+
+            const style = {
+                'margin-top': `${-HEADER_TOP_HEIGHT}px`,
+            };
+
+            if (!ScrollDown) {
+                style['margin-top'] = 0;
+            }
+
+            $header_top.css(style)
+
+        } else {
+
+            if (!ScrollDown) {
+                $header_top.css({
+                    'margin-top': 0,
+                })
+            } else {
+                $header_top.removeAttr('style')
+            }
+        }
+    },
+
     init: () => {
         menu.btn.parent().append("<div class='tippy-bg tippy-bg_menu js-close-menu' style='display: none'></div>")
         menu.open()
         menu.close()
         menu.dropDown()
+        config.addListenerMulti(window, 'scroll load', function () {
+            menu.scrollState()
+        })
+
         menu.dropDown(menu.tab, menu.content)
     }
 }

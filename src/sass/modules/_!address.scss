@@ -2,15 +2,25 @@
   border: 1px dashed var(--color-white);
   padding: 1.4rem 2rem;
   width: 20.5rem;
+  @include large-mobile {
+    padding: 1.4rem 1.5rem;
+  }
   &__title {
     font-weight: 700;
     color: var(--color-red-light);
     margin-bottom: .5rem;
     display: block;
+    @include large-mobile {
+      font-size: 1.4rem;
+    }
   }
   &__text,
   &__link {
     font-size: 1.2rem;
+    @include large-mobile {
+      font-size: 1.4rem;
+      display: block;
+    }
   }
   &__link {
     text-decoration-line: underline;
@@ -19,11 +29,18 @@
     &:hover {
       color: var(--color-red-light);
     }
+    @include large-mobile {
+      margin-bottom: .8rem;
+    }
   }
   &__phone {
     margin-top: .5rem;
     font-size: 1.8rem;
     display: inline-block;
     white-space: nowrap;
+    @include large-mobile {
+      font-size: 2rem;
+      margin-top: .8rem;
+    }
   }
 }

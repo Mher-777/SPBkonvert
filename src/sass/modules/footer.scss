@@ -6,6 +6,11 @@
   &__copyright {
     color: #8F9EB1;
     text-align: center;
+    @include large-mobile {
+      br {
+        display: none;
+      }
+    }
   }
   &__inner {
     background-color: var(--color-base);
@@ -18,28 +23,60 @@
     &:last-child {
       margin-bottom: 0;
     }
+    @include small-tablet {
+      margin-right: 2rem;
+    }
   }
   &__cell {
     flex: 1 1 auto;
     &_left {
       display: flex;
     }
+    &_right {
+      @include small-tablet {
+        width: 32rem;
+        display: flex;
+        flex-direction: column;
+      }
+      @include large-mobile {
+        width: calc(100% + 1rem);
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left: -1rem;
+        margin-top: 1.8rem;
+        & > * {
+          margin-left: 1rem;
+        }
+      }
+    }
   }
   &__label {
     display: block;
     font-size: 1.2rem;
+    @include large-mobile {
+      font-size: 1.4rem;
+    }
   }
   &__email {
     a {
       display: inline-block;
       margin-bottom: .8rem;
       font-weight: 700;
+      @include large-mobile {
+        font-weight: 400;
+        font-size: 1.6rem;
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+      }
     }
   }
   &__phone {
     margin-bottom: 2rem;
     a {
       font-size: 1.8rem;
+      @include large-mobile {
+        font-size: 2rem;
+      }
     }
   }
   &__holder {
@@ -47,6 +84,9 @@
   }
   &__info {
     margin-right: 6.5rem;
+    @include small-tablet {
+      margin-right: 0;
+    }
   }
   &__box {
     display: flex;
@@ -55,6 +95,17 @@
   &__contacts {
     margin-top: auto;
     max-width: 49rem;
+    @include small-tablet {
+      display: block;
+    }
+    @include large-mobile {
+      margin-top: .4rem;
+    }
+  }
+  &__menu {
+    @include small-tablet {
+      display: none;
+    }
   }
   &__btn {
     min-width: 18.5rem;
@@ -68,12 +119,21 @@
     margin-left: auto;
     padding-left: 1.3rem;
     transition: var(--base-transition);
+    @include large-mobile {
+      min-width: 14rem;
+      justify-content: center;
+      padding: .5rem 1rem;
+      margin-left: 1rem;
+    }
     .icon {
       max-width: 2.5rem;
       margin-right: 1.5rem;
       flex-shrink: 0;
       transition: var(--base-transition);
-      fill: var(--color-white)
+      fill: var(--color-white);
+      @include large-mobile {
+        display: none;
+      }
     }
     &_red {
       background-color: var(--color-red);
@@ -88,16 +148,51 @@
       }
     }
   }
+  &__row {
+    @include large-mobile {
+      display: block;
+    }
+  }
   &-contacts {
     &__item {
       width: 50%;
       margin-top: 1rem;
+      @include small-tablet {
+        width: 100%;
+      }
+      @include large-mobile {
+        margin-top: 1.7rem;
+      }
+      &_bottom {
+        @include small-tablet {
+          margin-top: auto;
+        }
+        @include large-mobile {
+          margin-top: 1rem;
+        }
+      }
+    }
+    &__link {
+      @include large-mobile {
+        &:not(.link_gray) {
+          .link__text {
+            text-decoration: underline;
+            text-decoration-skip-ink: none;
+          }
+        }
+        .link__text {
+          font-size: 1.4rem;
+        }
+      }
     }
   }
   &-menu {
     &__list {
       column-count: 2;
       column-gap: 7rem;
+      @include large-tablet {
+        column-gap: 5rem;
+      }
     }
     &__item {
       margin-bottom: 1rem;
@@ -108,6 +203,10 @@
       transition: var(--base-transition);
       &:hover {
         color: var(--color-red-light);
+      }
+      @include large-tablet {
+        font-size: 1.2rem;
+        font-weight: 400;
       }
     }
   }

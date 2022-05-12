@@ -2,7 +2,15 @@
   &-item {
     position: relative;
     width: calc(25% - 2rem);
-
+    @include large-tablet {
+      width: calc(25% - 1.5rem);
+    }
+    @include small-tablet {
+      width: calc(33.33333333% - 1.5rem);
+    }
+    @include large-mobile {
+      width: calc(50% - 1rem);
+    }
     &__image {
       z-index: -1;
     }
@@ -14,6 +22,10 @@
       flex-direction: column;
       justify-content: space-between;
       transition: var(--base-transition);
+      @include large-tablet {
+        padding: 2rem;
+        min-height: 24.5rem;
+      }
     }
     &__title {
       text-transform: uppercase;
@@ -21,6 +33,12 @@
       span {
         text-transform: none;
         font-size: 1.8rem;
+      }
+      @include large-tablet {
+        @include line-height(19, 22);
+        span {
+          @include line-height(15, 22);
+        }
       }
     }
     &__info {
@@ -32,6 +50,10 @@
       opacity: 0;
       margin-bottom: 2rem;
       text-align: left;
+      visibility: hidden;
+      @include small-tablet {
+        max-height: 14.5rem;
+      }
     }
     &__link {
       display: inline-block;
@@ -58,6 +80,15 @@
     }
     &_big {
       width: calc(50% - 2rem);
+      @include large-tablet {
+        width: calc(50% - 1.5rem);
+      }
+      @include small-tablet {
+        width: calc(66.666666% - 1.5rem);
+      }
+      @include large-mobile {
+        width: calc(100% - 1rem);
+      }
     }
     &_right {
       text-align: right;
@@ -74,6 +105,7 @@
       }
       .service-item__info {
         opacity: 1;
+        visibility: visible;
       }
       .service-item__content {
         background: rgba(42, 55, 71, 0.8);
@@ -87,8 +119,33 @@
   width: calc(50% - 2rem);
   padding: 3.5rem 3rem;
   min-height: 40rem;
+  @include large-tablet {
+    min-height: 31rem;
+    width: calc(50% - 1.5rem);
+  }
+  @include small-tablet {
+    padding: 2rem 1.5rem;
+    min-height: 24rem;
+  }
+  @include large-mobile {
+    width: calc(100% - 1rem);
+    min-height: 32rem;
+    padding: 4.5rem 2rem;
+  }
   &__image {
     z-index: -1;
+  }
+
+  &__holder {
+    margin-bottom: 2rem;
+    @include large-tablet {
+      ul {
+        max-width: 25rem;
+      }
+    }
+    @include small-tablet {
+      margin-bottom: .5rem;
+    }
   }
 
   &__content {
@@ -96,6 +153,12 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    @include large-tablet {
+      min-height: 23rem;
+    }
+    @include small-tablet {
+      min-height: 20rem;
+    }
   }
 
   &__btn {
@@ -104,11 +167,44 @@
 }
 .services {
   margin-top: 2rem;
+  @include large-mobile {
+    margin-top: 0;
+  }
   &__row {
     margin-left: -2rem;
+    @include large-tablet {
+      margin-left: -1.5rem;
+    }
+    @include large-mobile {
+      margin: 0 -2rem 0 -3rem;
+    }
   }
   &__col {
     margin-bottom: 2rem;
     margin-left: 2rem;
+    @include large-tablet {
+      margin-left: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    @include large-mobile {
+      margin-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    @include small-tablet {
+      &.order-8 {
+        order: 6;
+      }
+      &.order-9 {
+        order: 6;
+      }
+    }
+    @include large-mobile {
+      &.order-8 {
+        order: 8;
+      }
+      &.order-9 {
+        order: 9;
+      }
+    }
   }
 }
