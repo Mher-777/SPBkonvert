@@ -1,4 +1,11 @@
 +b.HEADER.header
+    +b.top-banner.js-cookie-hide
+        +e.bg.absolute
+            +e.IMG(src="/img/banner-bg.jpg" alt).img.object-fit
+        +e.content
+            +e.title Покупайте как юрлицо  /  Оплачивайте заказы с расчетного счета
+        +e.BUTTON(type="button" data-cookie='{"name": "banner", "value": "true"}').btn.js-cookie
+            +icon('close')
     +e.top
         .container
             +e.row.flex._justify._vertical
@@ -14,16 +21,39 @@
                             +e.A(href="#").link Контакты
                         +e.LI.item
                             +e.A(href="#").link О компании
-                            +e.UL.sublist
+                            +e.UL.sublist(data-da=".menu__list, 768, last")
                                 +e.LI.subitem
                                     +e.A(href="#").sublink
+                                        +icon('about', '0 0 23 23')
                                         | О компании
                                 +e.LI.subitem
                                     +e.A(href="#").sublink
+                                        +icon('payment', '0 0 23 23')
                                         | Онлайн оплата
                                 +e.LI.subitem
                                     +e.A(href="#" data-count="13").sublink
+                                        +icon('compare', '0 0 23 23')
                                         | Сравнение товаров
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        +icon('delivery', '0 0 23 23')
+                                        | Доставка
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        +icon('return', '0 0 23 23')
+                                        | Возврат
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        +icon('discount', '0 0 23 23')
+                                        | Скидки
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        +icon('map', '0 0 23 23')
+                                        | Контакты
+                                +e.LI.subitem
+                                    +e.A(href="#").sublink
+                                        +icon('document', '0 0 23 23')
+                                        | Публичная оферта
                 +e.info
                     +e.phones.flex._center
                         +e.desc.mobile-show Время работы офиса: Пн-Пт с 10:00 до 18:00
@@ -86,10 +116,10 @@
                                     +e.A(href="#").link Конверты "С праздником"
 
                     +e.features.features__.flex
-                        +e.A(href="#order" data-count="3").link.js-modal
+                        +e.A(href="#order" data-count="3" data-da=".menu__buttons, 580, 1").link._mobile.js-modal
                             +icon('order')
                             +e.text Заказы
-                        +e.A(href="#login-phone").link.js-modal
+                        +e.A(href="#login-phone" data-da=".menu__buttons, 580, 2").link._mobile.js-modal
                             +icon('user')
                             +e.text Войти
                         +e.A(href="#" data-count="12").link

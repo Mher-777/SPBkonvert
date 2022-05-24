@@ -1,0 +1,31 @@
+.top-banner {
+  position: relative;
+  color: var(--color-white);
+  &.is-scroll {
+    margin-top: -100%;
+  }
+  &__bg {
+    z-index: -1;
+  }
+  &__content {
+    font-weight: 500;
+    font-size: 1.8rem;
+    text-align: center;
+    padding: 1.5rem;
+  }
+  &__btn {
+    position: absolute;
+    width: 2rem;
+    height: 2rem;
+    z-index: 10;
+    right: 2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    .icon {
+      fill: currentColor;
+    }
+  }
+  @include large-mobile {
+    display: none;
+  }
+}

@@ -9,6 +9,9 @@
   cursor: auto;
   &_menu {
     z-index: 100;
+    @include large-mobile {
+      display: none !important;
+    }
   }
 }
 div[data-theme="time-tooltip"] {

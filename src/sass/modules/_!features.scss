@@ -3,6 +3,11 @@
   @include small-tablet {
     margin-left: 0;
   }
+
+  @include large-mobile {
+    align-items: center;
+  }
+
   &__text {
     display: block;
     margin-top: auto;
@@ -53,6 +58,46 @@
       color: var(--color-red);
       .icon {
         fill: var(--color-red);
+      }
+    }
+    &_mobile {
+      @include large-mobile {
+        flex-direction: row;
+        align-items: center;
+        margin-right: 0;
+        width: 50%;
+        height: 7rem;
+        justify-content: center;
+        font-size: 1.8rem;
+        & > * {
+          margin: 0;
+        }
+        .icon {
+          margin-right: 1rem;
+        }
+        &[data-count] {
+          &::before {
+            right: 13.7rem;
+            top: 1rem;
+          }
+        }
+        &:last-child {
+          border-left: 1px solid #E8E8E8;
+        }
+      }
+    }
+    &:not(.features__link_mobile) {
+      @include large-mobile {
+        margin-right: 2.5rem;
+        .features__text {
+          display: none;
+        }
+        .icon {
+          fill: var(--color-red);
+        }
+        &[data-count]::before {
+          right: -0.8rem;
+        }
       }
     }
   }

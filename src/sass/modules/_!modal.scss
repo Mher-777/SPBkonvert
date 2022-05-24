@@ -7,9 +7,15 @@
 }
 .mfp-container {
   padding: 0 2rem;
+  @include large-mobile {
+    padding: 0;
+  }
 }
 .mfp-content {
   padding: 2rem 0;
+  @include large-mobile {
+    padding: 0;
+  }
 }
 
 .mfp-fade.mfp-bg {
@@ -41,13 +47,26 @@
   padding: 5rem 3rem;
   border-radius: .5rem;
   position: relative;
+  @include large-mobile {
+    padding: 3.5rem 3rem;
+  }
   &_big {
     max-width: 68rem;
     padding: 3.5rem 5.5rem;
+    @include large-mobile {
+      padding: 3rem 2rem;
+    }
   }
   &_height {
-    min-height: 51rem;
+    min-height: 53rem;
     padding: 5rem 4rem;
+    @include large-mobile {
+      padding: 3rem 2rem;
+    }
+  }
+  @include large-mobile {
+    max-width: 100%;
+    min-height: 100vh;
   }
   &_padding {
     padding: 4.5rem 7rem;
@@ -80,8 +99,17 @@
     font-weight: 500;
     font-size: 1.8rem;
     margin-bottom: .2rem;
+    @include large-mobile {
+      font-size: 1.6rem;
+    }
   }
   &__text {
+    @include large-mobile {
+      font-size: 1.2rem;
+      &_long {
+        font-size: 1.6rem;
+      }
+    }
     &_margin-top {
       margin-top: 1rem;
     }
@@ -93,6 +121,11 @@
     margin: 1.5rem auto 0;
     max-width: max-content;
     display: flex;
+    @include large-mobile {
+      max-width: 100%;
+      width: 100%;
+      font-size: 1.5rem;
+    }
     &.btn_fluid {
       max-width: 100%;
     }
@@ -113,6 +146,9 @@
     &_margin {
       margin-top: 0;
       margin-bottom: 2.5rem;
+    }
+    @include large-mobile {
+      font-size: 1.1rem;
     }
   }
   &__captcha {
@@ -150,6 +186,11 @@
     &_black {
       border-color: var(--color-base);
       color: var(--color-base);
+    }
+    @include large-mobile {
+      width: 50%;
+      text-align: center;
+      margin: 0;
     }
   }
   &__icons {

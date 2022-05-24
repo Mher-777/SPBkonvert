@@ -60,6 +60,10 @@
     height: 4rem;
     padding: 1rem 1.3rem;
     font-size: 1.2rem;
+    @include large-mobile {
+      font-size: 1.1rem;
+      padding: 1rem;
+    }
     &:required {
       & ~ .input__placeholder {
         &::after {
@@ -78,6 +82,9 @@
       color: var(--color-base);
       font-size: 1.2rem;
       vertical-align: middle;
+      @include large-mobile {
+        font-size: 1.1rem;
+      }
     }
     &:hover {
       border-color: var(--color-gray);
@@ -142,9 +149,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    left: 1.48rem;
+    left: 1rem;
     transition: var(--base-transition);
     pointer-events: none;
+    @include large-mobile {
+      font-size: 1.1rem;
+    }
   }
 
   &__captcha {
@@ -168,6 +178,9 @@
     height: 6.7rem;
     &_small {
       height: 9rem;
+    }
+    @include large-mobile {
+      height: 13.5rem;
     }
   }
   &__placeholder {

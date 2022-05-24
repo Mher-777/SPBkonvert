@@ -6,6 +6,7 @@ import { modals } from "./modules/modals";
 import { tooltip } from "./modules/tooltip";
 import { menu } from "./modules/menu";
 import { search } from "./modules/search";
+import { cookie } from "./modules/cookie";
 import { config } from "./config";
 import "./vendor/dynamicAdapt"
 
@@ -20,6 +21,7 @@ App.prototype.init = () => {
 	select.init();
 	tooltip.init();
 	menu.init();
+	cookie.init();
 	search.init();
 
 	config.log('app init')

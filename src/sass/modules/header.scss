@@ -40,7 +40,7 @@
     }
 
     @include large-mobile {
-      padding: 1.1rem 0;
+      padding: 1.152rem 0;
     }
   }
   &__info {
@@ -73,7 +73,15 @@
     &-city {
       margin-bottom: .7rem;
       @include large-mobile {
-        display: none;
+        opacity: 0;
+        visibility: hidden;
+        position: absolute;
+        margin-bottom: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        &.is-focus {
+          position: absolute;
+        }
       }
     }
     @include large-desktop {
@@ -127,7 +135,7 @@
   }
   &__features {
     @include large-mobile {
-      display: none;
+
     }
   }
   &__desc {
@@ -137,6 +145,27 @@
       text-align: center;
       color: #8F9EB1;
       margin-bottom: 1rem;
+    }
+  }
+
+  &__logo {
+    @include large-mobile {
+      transition: var(--base-transition);
+    }
+  }
+
+  &__holder {
+    @include large-mobile {
+      position: relative;
+      align-self: normal;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      .tippy-bg {
+        top: -2.68rem;
+        left: -9.2rem;
+        width: 100vw;
+      }
     }
   }
 }

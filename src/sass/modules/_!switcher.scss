@@ -5,6 +5,9 @@
   margin-top: 2.5rem;
   display: flex;
   flex-wrap: wrap;
+  @include large-mobile {
+    font-size: 1.1rem;
+  }
   &__input {
     position: absolute;
     width: 0;
@@ -34,5 +37,8 @@
     white-space: nowrap;
     cursor: pointer;
     transition: var(--base-transition);
+    @include large-mobile {
+      padding: .8rem .3rem;
+    }
   }
 }

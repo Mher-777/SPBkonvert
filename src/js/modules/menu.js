@@ -41,24 +41,52 @@ var menu = {
             e.preventDefault()
             $this.toggleClass('is-active')
             $('.tippy-bg_menu').fadeToggle()
-            config.body.toggleClass('js-menu-open').toggleClass('js-lock')
+            config.header.css('width', `calc(100% - ${config.scrollbarWidth()}px)`)
+            config.body.toggleClass('js-lock').toggleClass('js-menu-open')
+            config.html.toggleClass('js-lock')
+
             $(config.menu).fadeToggle()
+
         })
     },
 
     close: () => {
         $('.js-close-menu').on('click', function (e) {
             e.preventDefault()
-            console.log($(this))
             menu.btn.removeClass('is-active')
             $('.tippy-bg_menu').fadeOut(400)
             $(config.menu).fadeOut(400, function () {
                 config.body.removeClass('js-menu-open').removeClass('js-lock')
+                config.html.removeClass('js-lock')
+                config.header.css('width', '')
             })
         })
     },
 
     scrollState: () => {
+        $(window).scroll(function(){
+            const sticky = $('.top-banner'),
+                  scroll = $(window).scrollTop();
+
+            if ($(window).width() < 580) {
+                sticky.removeAttr('style')
+                return false
+            }
+
+            if (scroll >= sticky.outerHeight()) {
+                setTimeout(function () {
+                    sticky.slideUp()
+                    return false;
+                }, 100)
+
+            } else {
+                setTimeout(function () {
+                    sticky.slideDown()
+                    return false;
+                }, 100)
+            }
+        });
+
         const $header_top = $('.header__top');
 
         if ($(window).width() > 580) {

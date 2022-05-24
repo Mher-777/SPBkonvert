@@ -1,4 +1,4 @@
-mixin select(label, ...items)
+mixin select(label, icon = false, strong = false, ...items)
 	+e.select.select__
 		if(label)
 			+e.label.p !{label}
@@ -8,5 +8,8 @@ mixin select(label, ...items)
 				- var count = 0;
 				each item in items
 					- var checked = count == 0;
-					+e.OPTION.option(value=count) !{item}
+					- var icons = icon[count] ? icon[count] : false
+					- var title = strong[count] ? strong[count] : false
+
+					+e.OPTION.option(value=count data-icon=icons data-title=title) !{item}
 					- count++;
