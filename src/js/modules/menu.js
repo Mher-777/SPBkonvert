@@ -109,17 +109,22 @@ var menu = {
             if (!ScrollDown) {
                 style['margin-top'] = 0;
             }
-
-            $header_top.css(style)
+            setTimeout(function () {
+                $header_top.css(style)
+            }, 100)
 
         } else {
 
             if (!ScrollDown) {
-                $header_top.css({
-                    'margin-top': 0,
-                })
+                setTimeout(function () {
+                    $header_top.css({
+                        'margin-top': 0,
+                    })
+                }, 100)
             } else {
-                $header_top.removeAttr('style')
+                setTimeout(function () {
+                    $header_top.removeAttr('style')
+                }, 100)
             }
         }
     },

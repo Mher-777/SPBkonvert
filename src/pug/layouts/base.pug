@@ -61,12 +61,12 @@ html(class=html.classList)&attributes(html.attrs)
 		block head-end
 	body(class=body.classList)&attributes(body.attrs)
 		block body-start
-
 		block header
 			include header
 		block menu
 			include ../modules/menu
-		block content
+		.page
+			block content
 		block footer
 			include footer
 		block popup

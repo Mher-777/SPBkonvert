@@ -157,6 +157,12 @@
     min-width: 20.5rem;
   }
 
+  &_short {
+    min-width: 18.5rem;
+    height: 3.5rem;
+    @include line-height(14, 20);
+  }
+
   &_dashed {
     border: 1px dashed var(--color-base);
     font-weight: 600;
@@ -170,6 +176,23 @@
       .icon {
         fill: var(--color-white);
       }
+    }
+  }
+
+  &_normal {
+    font-weight: 400;
+  }
+
+  &_dashed-red {
+    border-color: var(--color-red);
+    color: var(--color-red);
+    .icon {
+      fill: currentColor;
+    }
+    &:hover {
+      background-color: var(--color-red);
+      border-style: solid;
+      color: var(--color-white);
     }
   }
   &_white-bg {

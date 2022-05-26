@@ -149,11 +149,12 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    left: 1rem;
+    left: 1.3rem;
     transition: var(--base-transition);
     pointer-events: none;
     @include large-mobile {
       font-size: 1.1rem;
+      left: 1rem;
     }
   }
 

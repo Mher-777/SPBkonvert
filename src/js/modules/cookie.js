@@ -1,3 +1,5 @@
+import {config} from "../config";
+
 const cookie = {
 
     // возвращает куки с указанным name,
@@ -43,14 +45,14 @@ const cookie = {
     init: () => {
         $('.js-cookie').on('click', function (e) {
             e.preventDefault()
-            if ($(this).attr('data-cookie')) {
-                const set = JSON.parse($(this).attr('data-cookie'))
-
-                if (cookie.getCookie(set.name) == undefined) {
-                    cookie.setCookie(set.name, set.value)
-                    $(this).closest('.js-cookie-hide').slideUp()
-                }
-            }
+            $(this).closest('.js-cookie-hide').slideUp(400, function () {
+                $(this).remove()
+                config.body.css('paddingTop', config.header.outerHeight());
+                config.menu.css({
+                    top: config.header.outerHeight(),
+                    height: `calc(100vh - ${config.header.outerHeight()}px)`
+                })
+            })
         })
     }
 }

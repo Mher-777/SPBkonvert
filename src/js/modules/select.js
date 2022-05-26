@@ -9,6 +9,7 @@ var select = {
             }
             const icon = $(state.element).attr('data-icon')
             const title = $(state.element).attr('data-title')
+
             if (icon) {
                 return $(`<span>
                         <svg class="icon"><use xlink:href="app/icons/sprite.svg#${icon}"></use></svg>
@@ -22,14 +23,21 @@ var select = {
                         ${state.text}
                 </span>`);
             }
-
             return state.text;
         }
 
         select.selector.select2({
             minimumResultsForSearch: -1,
             width: '100%',
-            templateResult: formatState
+            templateResult: formatState,
+            templateSelection: function (state) {
+                const title = $(state.element).attr('data-title')
+                if (title) {
+                    return `${title} ${state.text}`
+                }
+
+                return state.text
+            }
         }).on('select2:select', function (e) {
             if ($(this).closest('.js-select-show').length > 0) {
                 $.magnificPopup.close();

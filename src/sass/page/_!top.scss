@@ -1,0 +1,16 @@
+.page-top {
+  margin-bottom: 3rem;
+  padding-top: .5rem;
+  &__title {
+    text-align: center;
+  }
+  &__cell {
+    flex: 1 1 33.33333%;
+    &_right {
+      text-align: right;
+    }
+  }
+  &__title {
+
+  }
+}

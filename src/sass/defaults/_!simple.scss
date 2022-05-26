@@ -42,14 +42,18 @@ html {
 		max-width: 100%;
 	}
 }
-
+.page {
+	flex: 1 1 auto;
+}
 body {
 	position: relative;
 	font-size: 1.4rem;
 	line-height: (19/14) * 1;
 	font-family: var(--font-noto-sans);
 	color: var(--color-base);
-
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
 	&.js-lock {
 		overflow-x: hidden;
 		overflow-y: scroll;
